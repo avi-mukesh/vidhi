@@ -24,6 +24,10 @@ body {
   font-family: Didot, Helvetica, sans-serif;
 }
 
+nav {
+  background: var(--background);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -39,19 +43,16 @@ body {
 .input-group input,
 .input-group textarea {
   padding: 2px;
-  width: 250px;
+  width: 360px;
   background-color: var(--secondary);
   color: black;
 }
 
-button {
-  background: var(--secondary);
-  padding: 0.5rem 0.8rem;
-  transition: 100ms linear;
-  border: 1px solid var(--foreground);
+.input-group textarea {
+  max-height: 300px;
+  min-height: 100px;
 }
 
-button:hover {
-  background: var(--background);
-  border: 1px solid var(--secondary);
+.input-group label {
+  justify-self: center;
 }

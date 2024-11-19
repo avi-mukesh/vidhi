@@ -24,7 +24,7 @@ function SubmitButton({ message, disabledButton }: PropsType) {
   return (
     <button
       disabled={disabled}
-      className="mx-auto text-lg cursor-pointer"
+      className="mx-auto text-lg cursor-pointer hover:underline underline-offset-2 p-1"
       type="submit"
     >
       Submit

@@ -1,5 +1,5 @@
 import LanguageSelector from "@/components/LanguageSelector";
-import Main from "@/components/Main";
+import Content from "@/components/Content";
 // import Main from "@/components/Main";
 import Image from "next/image";
 
@@ -16,7 +16,7 @@ export default function Home() {
         />
         <LanguageSelector />
       </section>
-      <Main />
+      <Content />
     </div>
   );
 }

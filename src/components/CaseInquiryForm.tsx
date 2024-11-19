@@ -16,7 +16,7 @@ const CaseInquiryForm = () => {
   // } = useForm({ mode: "all" });
 
   return (
-    <form action={test} className="flex flex-col gap-2 max-w-[50%] mx-auto">
+    <form action={test} className="flex flex-col gap-2 max-w-[40%] mx-auto">
       <div className="input-group">
         <label htmlFor="name">Name</label>
         <input
@@ -40,7 +40,9 @@ const CaseInquiryForm = () => {
           // {...register("inquiry", { required: "Inquiry is required" })}
         />
       </div>
-      <SubmitButton disabledButton={false} message="" />
+      <div className="self-end">
+        <SubmitButton disabledButton={false} message="" />
+      </div>
     </form>
   );
 };

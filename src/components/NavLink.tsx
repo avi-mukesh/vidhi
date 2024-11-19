@@ -8,7 +8,7 @@ type PropsType = {
 
 const NavLink = ({ href, linkName }: PropsType) => {
   return (
-    <li>
+    <li className="text-lg">
       <Link href={`${href}`}>{linkName}</Link>
     </li>
   );
