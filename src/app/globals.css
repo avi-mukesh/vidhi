@@ -2,20 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: Didot;
+  src: url("/src/app/fonts/Didot.otf");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #4e190f;
+  --foreground: #eebd70;
+
+  --secondary: #b34530;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Didot, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.input-group {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.input-group input,
+.input-group textarea {
+  padding: 2px;
+  width: 250px;
+  background-color: var(--secondary);
+  color: black;
+}
+
+button {
+  background: var(--secondary);
+  padding: 0.5rem 0.8rem;
+  transition: 100ms linear;
+  border: 1px solid var(--foreground);
+}
+
+button:hover {
+  background: var(--background);
+  border: 1px solid var(--secondary);
 }
