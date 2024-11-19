@@ -1,11 +1,11 @@
-import React from "react";
+// import React from "react";
 
-type PropsType = {
-  title: string;
-};
+// type PropsType = {
+//   title: string;
+// };
 
-const Header = ({ title }: PropsType) => {
-  return <div>{}</div>;
-};
+// const Header = ({ title }: PropsType) => {
+//   return <div>{}</div>;
+// };
 
-export default Header;
+// export default Header;
