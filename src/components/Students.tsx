@@ -1,5 +1,6 @@
 import React from "react";
 import StudentCommentForm from "./StudentCommentForm";
+import Header from "./Header";
 
 const Students = () => {
   return (
@@ -7,10 +8,9 @@ const Students = () => {
       id="students"
       className="text-center h-[120vh] mx-10 flex flex-col justify-center"
     >
-      <h2 className="text-6xl text-center mb-8 relative max-w-fit mx-auto">
-        Students
-      </h2>
-      <div className="flex flex-col justify-center gap-10 text-lg mb-20">
+      <Header>Students</Header>
+
+      <div className="flex flex-col justify-center gap-10 md:text-lg mb-20">
         <p className="mb-5">
           Are you a law student looking to make a difference while gaining
           valuable experience to advance your career?

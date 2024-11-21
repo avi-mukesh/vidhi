@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <section id="about" className="text-center mx-10 text-lg">
+    <section id="about" className="text-center mx-10 md:text-lg">
       <div className="h-[100vh] grid place-content-center">
         <p className="mb-5">
           A platform connecting economically disadvantaged groups and law

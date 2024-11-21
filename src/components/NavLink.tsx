@@ -4,12 +4,15 @@ import React from "react";
 type PropsType = {
   href: string;
   linkName: string;
+  setNavbarExpanded: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const NavLink = ({ href, linkName }: PropsType) => {
+const NavLink = ({ href, linkName, setNavbarExpanded }: PropsType) => {
   return (
     <li className="text-lg">
-      <Link href={`${href}`}>{linkName}</Link>
+      <Link href={`${href}`} onClick={() => setNavbarExpanded(false)}>
+        {linkName}
+      </Link>
     </li>
   );
 };

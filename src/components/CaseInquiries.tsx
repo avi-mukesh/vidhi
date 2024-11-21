@@ -1,14 +1,16 @@
 import React from "react";
 import CaseInquiryForm from "./CaseInquiryForm";
+import Header from "./Header";
 
 const CaseInquiries = () => {
   return (
     <section id="case-inquiries" className="text-center h-[80vh] mx-10">
-      <h2 className="text-6xl text-center mb-8 relative max-w-fit mx-auto">
+      {/* <h2 className="text-6xl text-center mb-8 relative max-w-fit mx-auto">
         Case Inquiries
-      </h2>
+      </h2> */}
+      <Header>Case Inquiries</Header>
 
-      <div className="flex flex-col justify-center h-[40%] gap-10 text-lg">
+      <div className="flex flex-col justify-center h-[40%] gap-10 md:text-lg">
         <p className="mb-5">
           At Vidhi Saharaa, we cover all areas of law—from civil to
           criminal—ensuring complete confidentiality in everything we do.

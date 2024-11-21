@@ -1,5 +1,7 @@
 import React from "react";
 import { FaLinkedin } from "react-icons/fa";
+import Header from "./Header";
+import TextContainer from "./TextContainer";
 
 const AboutMe = () => {
   return (
@@ -7,7 +9,7 @@ const AboutMe = () => {
       id="about-me"
       className="text-center h-[100vh] mx-10 flex flex-col justify-center"
     >
-      <h2 className="text-6xl text-center mb-8 relative max-w-fit mx-auto">
+      <Header>
         Anjali Jain
         <div className="absolute right-[-20px] text-xl">
           <a
@@ -18,9 +20,12 @@ const AboutMe = () => {
             <FaLinkedin />
           </a>
         </div>
-      </h2>
+      </Header>
 
-      <div className="flex flex-col justify-center gap-10 text-lg">
+      {/* <h2 className="text-6xl text-center mb-8 relative ">
+      </h2> */}
+
+      <TextContainer>
         <p className="mb-5">
           Hi, I&apos;m the founder of Vidhi Saharaa, and I come from Saharanpur,
           a small town in India. My admiration for the judiciary began early, as
@@ -44,7 +49,7 @@ const AboutMe = () => {
           a fair chance, and we&apos;re dedicated to being with you every step
           of the way.
         </p>
-      </div>
+      </TextContainer>
     </section>
   );
 };

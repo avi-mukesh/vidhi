@@ -1,4 +1,6 @@
 import React from "react";
+import Header from "./Header";
+import TextContainer from "./TextContainer";
 
 const Projects = () => {
   return (
@@ -6,24 +8,22 @@ const Projects = () => {
       id="projects"
       className="text-center h-[100vh] mx-10 flex flex-col justify-center"
     >
-      <header>
-        <h2 className="text-6xl text-center mb-8">Projects</h2>
-      </header>
+      <Header>Projects</Header>
 
-      <div className="mb-5">
-        <p className="text-lg">
+      <TextContainer>
+        <p>
           Use of Internet Technology to Facilitate Communication in Planning
           International Crimes
         </p>
-        <p>
+        <p className="text-sm md:text-base">
           Anjali Jain “Use of Internet Technology to Facilitate Communication in
           Planning International Crimes,” URSS SHOWCASE, accessed October 21,
           2024, https://urss.warwick.ac.uk/items/show/385.
         </p>
-      </div>
+      </TextContainer>
 
       <div>
-        <p className="text-xl">+WIP</p>
+        <p className="text-lg md:text-xl">+WIP</p>
       </div>
     </section>
   );
