@@ -22,9 +22,6 @@ const AboutMe = () => {
         </div>
       </Header>
 
-      {/* <h2 className="text-6xl text-center mb-8 relative ">
-      </h2> */}
-
       <TextContainer>
         <p className="mb-5">
           Hi, I&apos;m the founder of Vidhi Saharaa, and I come from Saharanpur,

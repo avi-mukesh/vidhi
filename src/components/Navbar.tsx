@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import NavLink from "./NavLink";
 import { FaBars, FaX } from "react-icons/fa6";
+import NavbarSection from "./NavbarSection";
 
 const linksLeft = [
   { href: "#students", linkName: "Students" },
@@ -28,38 +28,20 @@ const Navbar = () => {
         {navbarExpanded ? <FaX /> : <FaBars />}
       </button>
 
-      <ul
-        className={`list-none md:flex gap-3 md:gap-10 flex-col md:flex-row mb-7 md:mb-0 ${
-          navbarExpanded ? "flex" : "hidden"
-        }`}
-      >
-        {linksLeft.map((link) => (
-          <NavLink
-            key={link.href}
-            href={link.href}
-            linkName={link.linkName}
-            setNavbarExpanded={setNavbarExpanded}
-            active={activeLink === link.href}
-            setActiveLink={setActiveLink}
-          />
-        ))}
-      </ul>
-      <ul
-        className={`list-none md:flex gap-3 md:gap-10 flex-col md:flex-row mb-7 md:mb-0 ${
-          navbarExpanded ? "flex" : "hidden"
-        }`}
-      >
-        {linksRight.map((link) => (
-          <NavLink
-            key={link.href}
-            href={link.href}
-            linkName={link.linkName}
-            setNavbarExpanded={setNavbarExpanded}
-            active={activeLink === link.href}
-            setActiveLink={setActiveLink}
-          />
-        ))}
-      </ul>
+      <NavbarSection
+        links={linksLeft}
+        navbarExpanded={navbarExpanded}
+        activeLink={activeLink}
+        setNavbarExpanded={setNavbarExpanded}
+        setActiveLink={setActiveLink}
+      />
+      <NavbarSection
+        links={linksRight}
+        navbarExpanded={navbarExpanded}
+        activeLink={activeLink}
+        setNavbarExpanded={setNavbarExpanded}
+        setActiveLink={setActiveLink}
+      />
     </nav>
   );
 };

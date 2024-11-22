@@ -18,7 +18,7 @@ const NavLink = ({
   setActiveLink,
 }: PropsType) => {
   return (
-    <li className={clsx(`text-lg`, { underline: active })}>
+    <li className={clsx(`md:text-lg`, { underline: active })}>
       <Link
         href={`${href}`}
         onClick={() => {
