@@ -16,8 +16,8 @@ const linksRight = [
 ];
 
 const Navbar = () => {
-  // const [activeLink, setActiveLink] = useState("");
-  const [navbarExpanded, setNavbarExpanded] = useState(true);
+  const [navbarExpanded, setNavbarExpanded] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
 
   return (
     <nav className="p-10 sticky top-0 bg-background flex flex-col md:flex-row align-end md:justify-between z-50">
@@ -39,6 +39,8 @@ const Navbar = () => {
             href={link.href}
             linkName={link.linkName}
             setNavbarExpanded={setNavbarExpanded}
+            active={activeLink === link.href}
+            setActiveLink={setActiveLink}
           />
         ))}
       </ul>
@@ -53,6 +55,8 @@ const Navbar = () => {
             href={link.href}
             linkName={link.linkName}
             setNavbarExpanded={setNavbarExpanded}
+            active={activeLink === link.href}
+            setActiveLink={setActiveLink}
           />
         ))}
       </ul>
