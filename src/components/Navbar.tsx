@@ -29,6 +29,7 @@ const Navbar = () => {
       </button>
 
       <NavbarSection
+        className="mb-7"
         links={linksLeft}
         navbarExpanded={navbarExpanded}
         activeLink={activeLink}

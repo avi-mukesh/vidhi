@@ -7,6 +7,7 @@ type Link = {
 };
 
 type PropsType = {
+  className?: string;
   navbarExpanded: boolean;
   links: Link[];
   activeLink: string;
@@ -15,6 +16,7 @@ type PropsType = {
 };
 
 const NavbarSection = ({
+  className,
   navbarExpanded,
   links,
   activeLink,
@@ -23,9 +25,9 @@ const NavbarSection = ({
 }: PropsType) => {
   return (
     <ul
-      className={`list-none md:flex gap-3 md:gap-10 flex-col md:flex-row mb-7 md:mb-0 ${
+      className={`list-none md:flex gap-3 md:gap-10 flex-col md:flex-row md:mb-0 ${
         navbarExpanded ? "flex" : "hidden"
-      }`}
+      } ${className}`}
     >
       {links.map((link) => (
         <NavLink
