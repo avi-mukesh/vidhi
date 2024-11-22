@@ -5,7 +5,10 @@ import TextContainer from "./TextContainer";
 
 const CaseInquiries = () => {
   return (
-    <section id="case-inquiries" className="text-center h-[80vh] mx-10">
+    <section
+      id="case-inquiries"
+      className="text-center h-[80vh] mx-10 flex flex-col justify-center"
+    >
       <Header>Case Inquiries</Header>
 
       <TextContainer className="h-[40%]">

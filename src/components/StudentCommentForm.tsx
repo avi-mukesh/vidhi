@@ -27,7 +27,7 @@ const StudentCommentForm = () => {
   return (
     <form
       action={createComment}
-      className="flex flex-col gap-2 max-w-[60%] mx-auto"
+      className="flex flex-col gap-2 w-[80%] md:max-w-[65%] md:min-w-[40%] mx-auto"
       onSubmit={() => setSubmitted(true)}
     >
       <div className="input-group">

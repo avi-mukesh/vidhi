@@ -5,7 +5,10 @@ import TextContainer from "./TextContainer";
 
 const Students = () => {
   return (
-    <section id="students" className="text-center h-[120vh] mx-10">
+    <section
+      id="students"
+      className="text-center h-[120vh] mx-10 flex flex-col justify-center"
+    >
       <Header>Students</Header>
 
       <TextContainer className="mb-20">
