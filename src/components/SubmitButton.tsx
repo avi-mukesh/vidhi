@@ -4,23 +4,13 @@ import React from "react";
 import { useFormStatus } from "react-dom";
 
 type PropsType = {
-  message: string | undefined | null;
-  disabledButton: boolean;
+  validForm: boolean;
 };
 
-function SubmitButton({ message, disabledButton }: PropsType) {
+function SubmitButton({ validForm }: PropsType) {
   const { pending } = useFormStatus();
-  const submitted = message && message.length > 0;
-  const disabled = pending || disabledButton;
+  const disabled = pending || !validForm;
 
-  if (submitted) {
-    return (
-      <p className="mx-auto">
-        Your message has been submitted. I will get back to you within a few
-        hours.
-      </p>
-    );
-  }
   return (
     <button
       disabled={disabled}

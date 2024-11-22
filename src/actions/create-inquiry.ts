@@ -3,35 +3,23 @@ import * as nodemailer from "nodemailer";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
-type ContactFormState = {
-  errors?: {
-    name?: string[];
-    phoneOrEmail?: string[];
-    inquiry?: string[];
-  };
-  message?: string | null;
-};
-
-const ContactMessageSchema = z.object({
+const InquiryScehem = z.object({
   id: z.string(),
   name: z.string(),
   phoneOrEmail: z.string(),
   inquiry: z.string(),
 });
 
-const CreateContactMessage = ContactMessageSchema.omit({ id: true });
+const CreateInquiry = InquiryScehem.omit({ id: true });
 
 export async function test() {
   console.log("hey");
 }
 
-export async function createInquiry(
-  formState: ContactFormState,
-  formData: FormData
-): Promise<ContactFormState> {
-  const validatedFields = CreateContactMessage.safeParse({
+export async function createInquiry(formData: FormData) {
+  const validatedFields = CreateInquiry.safeParse({
     name: formData.get("name"),
-    email: formData.get("phoneOrEmail"),
+    phoneOrEmail: formData.get("phoneOrEmail"),
     inquiry: formData.get("inquiry"),
   });
 
@@ -39,10 +27,11 @@ export async function createInquiry(
 
   if (!validatedFields.success) {
     console.log(validatedFields.error.flatten().fieldErrors);
-    return {
-      errors: validatedFields.error.flatten().fieldErrors,
-      message: "Invalid data. Failed to send message.",
-    };
+    // return {
+    //   errors: validatedFields.error.flatten().fieldErrors,
+    //   message: "Invalid data. Failed to send message.",
+    // };
+    return;
   }
 
   const { name, phoneOrEmail, inquiry } = validatedFields.data;
@@ -57,9 +46,9 @@ export async function createInquiry(
   });
 
   const mailOptions = {
-    from: "enquiries@mukeshacademy.com",
-    to: "avimukesh10@gmail.com",
-    subject: `Tutoring Enquiry ${name}`,
+    from: "caseinquiries@mukeshacademy.com",
+    to: "anjaliijn11@gmail.com",
+    subject: `Case Inquiry - ${name}`,
     text: `
         Name: ${name}
         Phone/email: ${phoneOrEmail}
@@ -78,6 +67,5 @@ export async function createInquiry(
     }
   });
 
-  revalidatePath("/case-inquiries");
-  return { message: "Inquiry sent successfully" };
+  revalidatePath("/");
 }

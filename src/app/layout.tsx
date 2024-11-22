@@ -18,7 +18,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log(didot.variable);
   return (
     <html lang="en">
       <body className={`${didot.variable} antialiased`}>{children}</body>
