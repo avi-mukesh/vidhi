@@ -36,14 +36,14 @@ nav {
 
 .input-group {
   display: flex;
-  gap: 2rem;
   justify-content: space-between;
+  max-width: 100%;
 }
 
 .input-group input,
 .input-group textarea {
   padding: 2px;
-  width: 360px;
+  width: 80%;
   background-color: var(--secondary);
   color: black;
 }
@@ -55,4 +55,17 @@ nav {
 
 .input-group label {
   justify-self: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
 }

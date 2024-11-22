@@ -16,7 +16,7 @@ const CaseInquiryForm = () => {
   // } = useForm({ mode: "all" });
 
   return (
-    <form action={test} className="flex flex-col gap-2 max-w-[40%] mx-auto">
+    <form action={test} className="flex flex-col gap-2 max-w-[60%] mx-auto">
       <div className="input-group">
         <label htmlFor="name">Name</label>
         <input
