@@ -20,9 +20,9 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState("");
 
   return (
-    <nav className="p-10 pb-0 pt-5 sticky top-0 bg-background flex flex-col md:flex-row align-end md:justify-between z-50">
+    <nav className="px-10 pb-0 md:pt-5 sticky top-0 bg-background flex flex-col md:flex-row align-end md:justify-between z-50">
       <button
-        className="py-10 self-end md:hidden"
+        className="pt-6 pb-3 self-end md:hidden"
         onClick={() => setNavbarExpanded(!navbarExpanded)}
       >
         {navbarExpanded ? <FaX /> : <FaBars />}
