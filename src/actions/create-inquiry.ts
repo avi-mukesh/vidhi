@@ -46,7 +46,7 @@ export async function createInquiry(formData: FormData) {
   });
 
   const mailOptions = {
-    from: "caseinquiries@mukeshacademy.com",
+    from: "caseinquiries@vidhisaharaa.com",
     to: "anjaliijn11@gmail.com",
     subject: `Case Inquiry - ${name}`,
     text: `

@@ -32,7 +32,7 @@ export async function createComment(formData: FormData) {
   });
 
   const mailOptions = {
-    from: "studentcomments@mukeshacademy.com",
+    from: "studentcomments@vidhisaharaa.com",
     to: "anjaliijn11@gmail.com",
     subject: `Student Comment`,
     text: comment,
