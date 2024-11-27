@@ -2,10 +2,35 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
+// const didot = localFont({
+//   src: "./fonts/Didot.otf",
+//   variable: "--font-didot",
+//   weight: "100 900",
+// });
 const didot = localFont({
-  src: "./fonts/Didot.otf",
-  variable: "--font-didot",
-  weight: "100 900",
+  src: [
+    {
+      path: "./fonts/Didot.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Didot Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Didot Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./fonts/Didot Title.otf",
+      weight: "300",
+      style: "normal",
+    },
+  ],
+  fallback: ["Helvetica"],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +59,7 @@ export default function RootLayout({
         href="/apple-touch-icon.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
-      <body className={`${didot.variable} antialiased`}>{children}</body>
+      <body className={`${didot.className} antialiased`}>{children}</body>
     </html>
   );
 }

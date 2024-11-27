@@ -1,10 +1,11 @@
 import React from "react";
+import Header from "./Header";
 
 const Contact = () => {
   return (
     <section id="contact" className="text-center">
       <div className="h-[100vh] place-content-center">
-        <p className="text-3xl md:text-4xl">Contact us</p>
+        <Header>Contact Us</Header>
         <p className="text-xl md:text-3xl">vsaharaa@gmail.com</p>
       </div>
     </section>
