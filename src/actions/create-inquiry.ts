@@ -39,7 +39,6 @@ export async function createInquiry(formData: FormData) {
   const transport = nodemailer.createTransport({
     host: "live.smtp.mailtrap.io",
     port: 587,
-    secure: true,
     auth: {
       user: "api",
       pass: process.env.PASSWORD,
