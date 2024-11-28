@@ -59,7 +59,7 @@ export async function createInquiry(formData: FormData) {
   // Send the email
   transport.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log("Error:", error);
+      console.log(error);
       return { message: "Failed to send email due to server error." };
     } else {
       console.log("Email sent: " + info.response);

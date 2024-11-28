@@ -15,6 +15,8 @@ export async function createComment(formData: FormData) {
     comment: formData.get("comment"),
   });
 
+  console.log(validatedFields);
+
   if (!validatedFields.success) {
     console.log(validatedFields.error.flatten().fieldErrors);
     return;
@@ -41,7 +43,7 @@ export async function createComment(formData: FormData) {
   // Send the email
   transport.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log("Error:", error);
+      console.log(error);
       return { message: "Failed to send email due to server error." };
     } else {
       console.log("Email sent: " + info.response);
