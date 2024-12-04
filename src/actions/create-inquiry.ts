@@ -2,19 +2,16 @@
 import * as nodemailer from "nodemailer";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
+import prisma from "@/lib/db";
 
-const InquiryScehem = z.object({
+const InquirySchema = z.object({
   id: z.string(),
   name: z.string(),
   phoneOrEmail: z.string(),
   inquiry: z.string(),
 });
 
-const CreateInquiry = InquiryScehem.omit({ id: true });
-
-export async function test() {
-  console.log("hey");
-}
+const CreateInquiry = InquirySchema.omit({ id: true });
 
 export async function createInquiry(formData: FormData) {
   const validatedFields = CreateInquiry.safeParse({
@@ -27,45 +24,49 @@ export async function createInquiry(formData: FormData) {
 
   if (!validatedFields.success) {
     console.log(validatedFields.error.flatten().fieldErrors);
-    // return {
-    //   errors: validatedFields.error.flatten().fieldErrors,
-    //   message: "Invalid data. Failed to send message.",
-    // };
     return;
   }
 
   const { name, phoneOrEmail, inquiry } = validatedFields.data;
 
-  const transport = nodemailer.createTransport({
-    host: "live.smtp.mailtrap.io",
-    port: 587,
-    auth: {
-      user: "api",
-      pass: process.env.PASSWORD,
-    },
-  });
+  try {
+    await prisma.caseInquiry.create({
+      data: { name, phoneOrEmail, inquiry },
+    });
 
-  const mailOptions = {
-    from: "caseinquiries@vidhisaharaa.com",
-    to: "anjaliijn11@gmail.com",
-    subject: `Case Inquiry - ${name}`,
-    text: `
-        Name: ${name}
-        Phone/email: ${phoneOrEmail}
-        Inquiry: ${inquiry}
-    `,
-  };
+    const transport = nodemailer.createTransport({
+      host: "live.smtp.mailtrap.io",
+      port: 587,
+      auth: {
+        user: "api",
+        pass: process.env.PASSWORD,
+      },
+    });
 
-  // Send the email
-  transport.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log(error);
-      return { message: "Failed to send email due to server error." };
-    } else {
-      console.log("Email sent: " + info.response);
-      return { message: "Inquiry sent" };
-    }
-  });
+    const mailOptions = {
+      from: "caseinquiries@vidhisaharaa.com",
+      to: "anjaliijn11@gmail.com",
+      subject: `Case Inquiry - ${name}`,
+      text: `
+          Name: ${name}
+          Phone/email: ${phoneOrEmail}
+          Inquiry: ${inquiry}
+      `,
+    };
+
+    // Send the email
+    transport.sendMail(mailOptions, async (error, info) => {
+      if (error) {
+        console.log(error);
+        return { message: "Failed to send email due to server error." };
+      } else {
+        console.log("Email sent: " + info.response);
+        return { message: "Inquiry sent" };
+      }
+    });
+  } catch (e) {
+    console.error(e);
+  }
 
   revalidatePath("/");
 }
