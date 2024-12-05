@@ -45,6 +45,7 @@ export async function createComment(formData: FormData) {
       text: comment,
     };
 
+    console.log("about to attempt to send the mail");
     // Send the email
     transport.sendMail(mailOptions, (error, info) => {
       if (error) {

@@ -53,6 +53,7 @@ export async function createInquiry(formData: FormData) {
           Inquiry: ${inquiry}
       `,
     };
+    console.log("about to attempt to send the mail");
 
     // Send the email
     transport.sendMail(mailOptions, async (error, info) => {
