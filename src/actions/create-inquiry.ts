@@ -56,7 +56,8 @@ export async function createInquiry(formData: FormData) {
     console.log("about to attempt to send the mail");
 
     // Send the email
-    await new Promise((_resolve, _reject) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    await new Promise((resolve, reject) => {
       transport.sendMail(mailOptions, async (error, info) => {
         if (error) {
           console.log(error);
