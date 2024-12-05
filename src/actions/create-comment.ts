@@ -47,14 +47,18 @@ export async function createComment(formData: FormData) {
 
     console.log("about to attempt to send the mail");
     // Send the email
-    transport.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.log(error);
-        return { message: "Failed to send email due to server error." };
-      } else {
-        console.log("Email sent: " + info.response);
-        return { message: "Comment sent" };
-      }
+
+    await new Promise((resolve, reject) => {
+      // send mail
+      transport.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.log(error);
+          return { message: "Failed to send email due to server error." };
+        } else {
+          console.log("Email sent: " + info.response);
+          return { message: "Comment sent" };
+        }
+      });
     });
   } catch (e) {
     console.error(e);

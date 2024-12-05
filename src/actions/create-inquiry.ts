@@ -56,14 +56,16 @@ export async function createInquiry(formData: FormData) {
     console.log("about to attempt to send the mail");
 
     // Send the email
-    transport.sendMail(mailOptions, async (error, info) => {
-      if (error) {
-        console.log(error);
-        return { message: "Failed to send email due to server error." };
-      } else {
-        console.log("Email sent: " + info.response);
-        return { message: "Inquiry sent" };
-      }
+    await new Promise((resolve, reject) => {
+      transport.sendMail(mailOptions, async (error, info) => {
+        if (error) {
+          console.log(error);
+          return { message: "Failed to send email due to server error." };
+        } else {
+          console.log("Email sent: " + info.response);
+          return { message: "Inquiry sent" };
+        }
+      });
     });
   } catch (e) {
     console.error(e);
