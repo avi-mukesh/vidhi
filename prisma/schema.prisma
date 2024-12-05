@@ -76,8 +76,8 @@ model DiscussionComment {
   discussion        Discussion          @relation(fields: [discussionId], references: [id])
   discussionId      String
   datePosted        DateTime            @default(now())
-  replyToComment    DiscussionComment   @relation("CommentChain", fields: [replyToCommentId], references: [id])
-  replyToCommentId  String
+  replyToComment    DiscussionComment?  @relation("CommentChain", fields: [replyToCommentId], references: [id])
+  replyToCommentId  String?
   DiscussionComment DiscussionComment[] @relation("CommentChain")
 
   @@schema("public")
