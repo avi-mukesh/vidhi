@@ -47,7 +47,7 @@ export async function createComment(formData: FormData) {
 
     console.log("about to attempt to send the mail");
     // Send the email
-
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     await new Promise((resolve, reject) => {
       // send mail
       transport.sendMail(mailOptions, (error, info) => {

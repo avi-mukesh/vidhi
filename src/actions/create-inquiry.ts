@@ -56,7 +56,7 @@ export async function createInquiry(formData: FormData) {
     console.log("about to attempt to send the mail");
 
     // Send the email
-    await new Promise((resolve, reject) => {
+    await new Promise((_resolve, _reject) => {
       transport.sendMail(mailOptions, async (error, info) => {
         if (error) {
           console.log(error);
