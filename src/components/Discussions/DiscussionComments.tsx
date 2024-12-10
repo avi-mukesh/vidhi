@@ -1,19 +1,20 @@
 import React from "react";
-import { getDiscussionComments } from "@/lib/discussions/data";
 import { DiscussionCommentComponent } from "@/components/Discussions/DiscussionCommentComponent";
+import { DiscussionCommentWithReply } from "@/lib/types";
 
 type PropsType = {
-  discussionId: string;
+  comments: DiscussionCommentWithReply[];
 };
 
-export const DiscussionComments = async ({ discussionId }: PropsType) => {
-  const comments = await getDiscussionComments(discussionId);
-
+export const DiscussionComments = ({ comments }: PropsType) => {
   return (
-    <div className="w-full flex flex-col ">
-      {comments.map((comment) => (
-        <DiscussionCommentComponent key={comment.id} comment={comment} />
-      ))}
+    <div className="w-full flex flex-col mb-1">
+      <h3>Comments</h3>
+      {comments.map((comment) => {
+        return (
+          <DiscussionCommentComponent key={comment.id} comment={comment} />
+        );
+      })}
     </div>
   );
 };

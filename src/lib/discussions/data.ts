@@ -5,5 +5,12 @@ export async function getDiscussions() {
 }
 
 export async function getDiscussionComments(discussionId: string) {
-  return prisma.discussionComment.findMany({ where: { discussionId } });
+  return prisma.discussionComment.findMany({
+    where: { discussionId },
+    include: { replyToComment: true },
+  });
+}
+
+export async function getDiscussionComment(commentId: string) {
+  return prisma.discussionComment.findFirst({ where: { id: commentId } });
 }

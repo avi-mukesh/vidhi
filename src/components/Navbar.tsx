@@ -11,7 +11,7 @@ const linksLeft = [
 const linksRight = [
   { href: "#about", linkName: "About" },
   { href: "#contact", linkName: "Contact" },
-  { href: "#projects", linkName: "Projects" },
+  { href: "/discussions", linkName: "Discussions" },
   { href: "#about-me", linkName: "About Me" },
 ];
 
