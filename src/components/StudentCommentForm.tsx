@@ -1,28 +1,28 @@
 "use client";
 import React, { useState } from "react";
-import SubmitButton from "./SubmitButton";
+// import SubmitButton from "./SubmitButton";
 import { createComment } from "@/actions/create-comment";
 
 const StudentCommentForm = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const [formState, setFormState] = useState({
-    comment: "",
-  });
+  // const [formState, setFormState] = useState({
+  //   comment: "",
+  // });
 
-  const valid = formState.comment.length > 0;
+  // const valid = formState.comment.length > 0;
 
   if (submitted) {
     return <p className="md: text-lg">Comment Submitted!</p>;
   }
 
-  const onChange = (
-    e:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    setFormState({ ...formState, [e.target.name]: e.target.value });
-  };
+  // const onChange = (
+  //   e:
+  //     | React.ChangeEvent<HTMLInputElement>
+  //     | React.ChangeEvent<HTMLTextAreaElement>
+  // ) => {
+  //   setFormState({ ...formState, [e.target.name]: e.target.value });
+  // };
 
   return (
     <form
@@ -30,7 +30,8 @@ const StudentCommentForm = () => {
       className="flex flex-col gap-2 w-[80%] md:max-w-[65%] md:min-w-[40%] mx-auto"
       onSubmit={() => setSubmitted(true)}
     >
-      <div className="input-group">
+      <span>Student comments is disabled temporarily.</span>
+      {/* <div className="input-group">
         <label htmlFor="comment">Your comment</label>
         <textarea
           name="comment"
@@ -41,7 +42,7 @@ const StudentCommentForm = () => {
       </div>
       <div className="self-end">
         <SubmitButton validForm={valid} />
-      </div>
+      </div> */}
     </form>
   );
 };
