@@ -1,8 +1,8 @@
 import { getUser } from "@/lib/user/data";
 import { Discussion } from "@prisma/client";
 import React from "react";
-import { DiscussionCommentsContainer } from "./DiscussionCommentsContainer";
-import { getDiscussionComments } from "@/lib/discussions/data";
+// import { DiscussionCommentsContainer } from "./DiscussionCommentsContainer";
+// import { getDiscussionComments } from "@/lib/discussions/data";
 
 type PropsType = {
   discussion: Discussion;
@@ -27,10 +27,10 @@ export const DiscussionCard = async ({ discussion }: PropsType) => {
           })}
         </p>
       </div>
-      <DiscussionCommentsContainer
+      {/* <DiscussionCommentsContainer
         discussionId={discussion.id}
         comments={comments}
-      />
+      /> */}
     </div>
   );
 };
