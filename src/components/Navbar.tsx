@@ -5,14 +5,14 @@ import { FaBars, FaX } from "react-icons/fa6";
 import NavbarSection from "./NavbarSection";
 
 const linksLeft = [
-  { href: "#students", linkName: "Students" },
-  { href: "#case-inquiries", linkName: "Case Inquiries" },
+  { href: "/#students", linkName: "Students" },
+  { href: "/#case-inquiries", linkName: "Case Inquiries" },
 ];
 const linksRight = [
-  { href: "#about", linkName: "About" },
-  { href: "#contact", linkName: "Contact" },
-  { href: "/discussions", linkName: "Discussions" },
-  { href: "#about-me", linkName: "About Me" },
+  { href: "/#about", linkName: "About" },
+  { href: "/#contact", linkName: "Contact" },
+  { href: "/blog", linkName: "Blog" },
+  { href: "/#about-me", linkName: "About Me" },
 ];
 
 const Navbar = () => {
