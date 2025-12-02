@@ -10,7 +10,7 @@ type PropsType = {
 
 export const DiscussionCard = async ({ discussion }: PropsType) => {
   const author = await getUser(discussion.authorId);
-  const comments = await getDiscussionComments(discussion.id);
+  // const comments = await getDiscussionComments(discussion.id);
 
   return (
     <div className="p-2 bg-foreground text-background m-5 flex flex-col">
@@ -27,10 +27,6 @@ export const DiscussionCard = async ({ discussion }: PropsType) => {
           })}
         </p>
       </div>
-      {/* <DiscussionCommentsContainer
-        discussionId={discussion.id}
-        comments={comments}
-      /> */}
     </div>
   );
 };
