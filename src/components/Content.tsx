@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Heading from "./Heading";
 import About from "./About";
 import Contact from "./Contact";
-import Projects from "./Projects";
+// import Projects from "./Projects";
 import AboutMe from "./AboutMe";
 import Students from "./Students";
 import CaseInquiries from "./CaseInquiries";
