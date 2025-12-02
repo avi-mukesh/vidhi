@@ -17,7 +17,7 @@ const Content = () => {
         <Heading />
         <About />
         <Contact />
-        <Projects />
+        {/* <Projects /> */}
         <AboutMe />
         <Students />
         <CaseInquiries />
